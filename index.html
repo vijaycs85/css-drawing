@@ -1,156 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Drawing</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pattern</title>
+  <style>
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+    div {
+      display: block;
+    }
+    body {
+      display: block;
+      line-height: 1;
+    }
+
+    :root {
+      --color-background-2: #daa520;
+      --color-background: #CCC;
+      --color-one: #F72585;
+      --color-two: #B5179E;
+      --color-three: #7209B7;
+      --color-four: #560BAD;
+      --color-five: #480CA8;
+      --color-six: #3A0CA3;
+      --color-seven: #3F37C9;
+      --color-eight: #4361EE;
+      --color-nine: #4895EF;
+      --color-ten: #4CC9F0;
+      --color-debug: #FF0000;
+    }
+    .item {
+      min-height: 1200px;
+      position: relative;
+      font-size: 7px;
+      background-color: var(--color-background);
+    }
+    #pattern {
+      background-image:
+        repeating-radial-gradient(
+          var(--color-one) 1em 2em, var(--color-two) 2.2em 2.3em,
+          var(--color-three) 2.5em 6em, var(--color-four) 6.2em 6.3em,
+          var(--color-one) 11em 12em, var(--color-two) 12.2em 12.3em,
+          var(--color-three) 17em 18em, var(--color-four) 18.2em 18.3em,
+          var(--color-one) 23em 24em, var(--color-two) 24.2em 24.3em,
+          var(--color-three) 29em 30em, var(--color-four) 30.2em 30.3em
+        );
+      background-size: 33% 33%;
+      background-position:12% 12%;
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-    <div class="c1 circle">
-        <div class="c2 circle">
-            <div class="c3 circle">
-                <div class="c4 circle">
-                    <div class="c5 circle">
-                        <div class="c6 circle">
-                            <div class="c7 circle">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-        </div>
-    </div>
-</div>
-
-<div class="circle level-4 item-1"></div>
-<div class="circle level-4 item-2"></div>
-<div class="circle level-4 item-3"></div>
-<div class="circle level-4 item-4"></div>
-<div class="circle level-4 item-5"></div>
-
-<div class="circle level-4 item-6"></div>
-<div class="circle level-4 item-7"></div>
-<div class="circle level-4 item-8"></div>
-<div class="circle level-4 item-9"></div>
-<div class="circle level-4 item-10"></div>
-
-<div class="circle level-4 item-11"></div>
-<div class="circle level-4 item-12"></div>
-<div class="circle level-4 item-13"></div>
-<div class="circle level-4 item-14"></div>
-<div class="circle level-4 item-15"></div>
-
-<div class="circle level-4 item-16"></div>
-<div class="circle level-4 item-17"></div>
-<div class="circle level-4 item-18"></div>
-<div class="circle level-4 item-19"></div>
-<div class="circle level-4 item-20"></div>
-
-<div class="circle level-8"></div>
-    <style>
-        :root {
-            --color-border: #000;
-            --color-one: #D4C;
-            --color-two: #D8C;
-            --color-three: #3AF;
-            --color-debug: #F00;
-        }
-
-        .level-4.item-1 {
-            top: 17em;
-            left: 20.5em;
-        }
-        .level-4.item-2 {
-            top: 16.5em;
-            left: 21.3em;
-        }
-        .level-4.item-3 {
-            top: 16em;
-            left: 22.1em;
-        }
-        .level-4.item-4 {
-            top: 15.5em;
-            left: 23em;
-        }
-        .level-4 {
-            width: .65em;
-            height: .65em;
-            background-color: var(--color-three);
-            position: absolute;
-        }
-
-        .level-8 {
-            width: 1em;
-            height: 1em;
-            background-color: var(--color-three);
-            position: absolute;
-            top: 30em;
-            left: 30em;
-        }
-        .circle {
-            border-radius: 50%;
-            border: 1px solid var(--color-border);
-        }
-
-        .c1 {
-            width: 50em;
-            height: 50em;
-        }
-
-        .c2 {
-            width: 46em;
-            height: 46em;
-            margin: 2em;
-        }
-
-        .c3 {
-            width: 40em;
-            height: 40em;
-            margin: 3em;
-        }
-
-
-        .c4 {
-            width: 34em;
-            height: 34em;
-            border: .5em solid var(--color-one);
-            margin: 2.5em;
-        }
-
-
-        .c5 {
-            width: 31.5em;
-            height: 31.5em;
-            border: .25em solid var(--color-debug);
-            margin: 1em;
-        }
-
-        .c6 {
-            width: 28.5em;
-            height: 28.5em;
-            border: .25em solid var(--color-one);
-            margin: 1.25em;
-
-        }
-        .c7 {
-            width: 24.25em;
-            height: 24.25em;
-            margin: 1.5em;
-            border: .5em solid var(--color-one);
-        }
-        body {
-            width: 100%;
-            height: 100%;
-            padding: 5rem;
-            display: block;
-        }
-        .container {
-            width: 1170px;
-            margin: auto;
-        }
-
-    </style>
+<div class="item" id="pattern"></div>
 </body>
 </html>
