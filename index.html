@@ -6,6 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pattern</title>
   <style>
+
+    :root {
+      --color-background: #560BAD;
+      --color-one: #F72585;
+      --color-two: #B5179E;
+      --color-three: #7209B7;
+      --color-four: #560BAD;
+      --color-five: #480CA8;
+      --color-six: #3A0CA3;
+      --color-seven: #3F37C9;
+      --color-eight: #4361EE;
+      --color-nine: #4895EF;
+      --color-ten: #4CC9F0;
+      --color-debug: #FF0000;
+    }
     html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
       margin: 0;
       padding: 0;
@@ -20,25 +35,10 @@
     body {
       display: block;
       line-height: 1;
-    }
-
-    :root {
-      --color-background-2: #daa520;
-      --color-background: #CCC;
-      --color-one: #F72585;
-      --color-two: #B5179E;
-      --color-three: #7209B7;
-      --color-four: #560BAD;
-      --color-five: #480CA8;
-      --color-six: #3A0CA3;
-      --color-seven: #3F37C9;
-      --color-eight: #4361EE;
-      --color-nine: #4895EF;
-      --color-ten: #4CC9F0;
-      --color-debug: #FF0000;
+      background-color: var(--color-background);
     }
     .item {
-      min-height: 1200px;
+      min-height: 1600px;
       position: relative;
       font-size: 7px;
       background-color: var(--color-background);
@@ -56,10 +56,58 @@
       background-size: 33% 33%;
       background-position:12% 12%;
     }
+
+    @media screen and (max-width: 860px) {
+      #pattern {
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+      }
+    }
+    @media screen and (max-width: 860px) {
+      #pattern {
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+      }
+    }
   </style>
 </head>
 <body>
-
 <div class="item" id="pattern"></div>
+
+<script>
+  let switchTimer=1;
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+  function switchColorSet() {
+    let root = document.documentElement;
+    const colorSet = [
+      ['#F72585', '#B5179E', '#7209B7', '#560BAD'],
+      ['#03071e', '#370617', '#6a040f', '#9d0208'],
+      ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf'],
+      ['#264653', '#2a9d8f', '#e9c46a', '#f4a261'],
+      ['#7400b8', '#6930c3', '#5e60ce', '#5390d9'],
+      ['#ff595e', '#ffca3a', '#8ac926', '#1982c4'],
+      ['#0c0f0a', '#ff206e', '#fbff12', '#ffffff'],
+      ['#ffc4d6', '#ffa6c1', '#ff87ab', '#ff5d8f'],
+      ['#6b9080', '#a4c3b2', '#cce3de', '#eaf4f4'],
+      ['#004b23', '#006400', '#007200', '#38b000'],
+      ['#2d00f7', '#6a00f4', '#8900f2', '#a100f2'],
+      ['#ff7b00', '#ff9500', '#ffaa00', '#ffc300'],
+      ['#390099', '#9e0059', '#ff0054', '#ff5400'],
+    ];
+    let index = getRandomInt(colorSet.length);
+    root.style.setProperty('--color-one', colorSet[index][0]);
+    root.style.setProperty('--color-two', colorSet[index][1]);
+    root.style.setProperty('--color-three', colorSet[index][2]);
+    root.style.setProperty('--color-four', colorSet[index][3]);
+    root.style.setProperty('--color-background', colorSet[index][3]);
+    switchTimer++;
+  }
+  const switchInterval = (getRandomInt(switchTimer) + 1) * 900;
+  setInterval(switchColorSet, switchInterval);
+</script>
 </body>
 </html>
